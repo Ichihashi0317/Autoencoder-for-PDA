@@ -1,4 +1,5 @@
-[AE_structure.pdf](https://github.com/user-attachments/files/18895501/AE_structure.pdf)
+![Image](https://github.com/user-attachments/assets/f3a9b51e-3ac4-4d4f-9371-2bf58fbbfd84)
+
 # PDA-AE
 Python用の変復調プログラム
 - BPSK，QPSK，QAM対応（すべてグレイ符号）
