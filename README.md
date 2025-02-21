@@ -1,37 +1,57 @@
 ![Image](https://github.com/user-attachments/assets/f3a9b51e-3ac4-4d4f-9371-2bf58fbbfd84)
 
 # PDA-AE
-Python用の変復調プログラム
-- BPSK，QPSK，QAM対応（すべてグレイ符号）
-- 複素モデル，実数等価モデルどちらにも対応
+PDA
+- MIMO通信
+- 検出器にPDA
+- 変調器は従来のQAMかニューラルネットワーク (NN) で構成か選べる
+- 検出器は従来のPDAか適応スケールビリーフ (ASB) か深層展開 (DU)か選べる
 
 ## シミュレーションパラメータの説明
-- Q_ant (int) - 1アンテナあたりの多値数． $2$ または $4^n$ ($n$は自然数) で指定．
+### 学習・テスト 共通設定
+- use_nnmod (bool) -
+- ASB_mode (str) - 
+  - "PDA"
+  - "ASB"
+  - "DU"
+- M (int) - 
+- N (int) - 
+- Q_ant (int) - <br>
+  1アンテナあたりの多値数． use_nnmod=Falseの場合は$2$ または $4^n$ ($n$は任意の自然数) で指定．
+- Kd (int) - シンボル長
+- num_joint_ant (int, float) - {0.5, 1}
+- niter_PDA (int) - 
+- d1 (float) - 
+- d2 (float) -
 
-  ### インスタンス生成時の引数
+### 学習設定
+#### 変調器・検出器 共通設定
+- epochs (int) - 
+- mbs (int) - 
+- EsN0_train (float) - 
+#### 変調器
+- hidden_depth (int) - 
+- hidden_dim (int) - 
+- ind_cons (bool) - 
+<!--  -->
+- lr_mod (float) - 
+- drop_start_mod (int) - 
+- drop_factor_mod (float) - 
+#### 検出器
+- lr_det (float) - 
+- drop_start_det (int) - 
+- drop_factor_det (float) - 
 
-  - complex (bool) - Trueの場合は複素モデルを扱う．Falseの場合は実数等価モデルを扱う．規定値はTrue．
-  
-  ### ビット列生成メソッド
-  入力：
-  - M (int) - アンテナ本数．任意の自然数で指定．
-  - K (int) - 1フレーム中の送信ベクトル数．任意の自然数で指定．
-  
-  出力：
-  - bits (ndarray) - 変調メソッド入力に合わせたサイズのビット列．乱数で生成される．
+### テスト設定
+- EsN0_test (ndarray) - 
+- nloop_max (int, float) - 
+- SIM.SE_max (int, float) - 
+
+### 並列処理設定
+- nworker (int) - 
+
+
   
   ### 変調メソッド
   入力：
   - bits (ndarray) - 送信ビットの2次元配列．1送信ベクトルに対応するビット列を列ベクトルとして含み，それを行方向へ並べた行列．1送信ベクトルあたりのビット数を $q = M \log_2{Q_\mathrm{ant}}$ とすると，サイズは $(q \times K)$．
-
-  出力：
-  - syms (ndarray) - 送信行列．送信ベクトルを列ベクトルとして含む．サイズは，複素モデルの場合は $(M \times K)$，実数等価モデルの場合は $(2M \times K)$．シンボルマッピングは平均電力が1に規格化される．
-
-  ### 復調メソッド
-  入力：
-  - syms (ndarray) - 受信行列．サイズは送信行列と同じ．
-
-  出力：
-  - bits (ndarray) - 受信ビットの2次元配列．各アンテナの実部・虚部単位で硬判定される．サイズは送信ビットの配列と同じ．
-
-[^1]: 変調メソッドへ入力する送信ビット列は，必ずしもビット列生成メソッドで作る必要はなく，自分で作ったものでも問題ない．<br>例えば，符号化器などから出力したビット列を，サイズを整えて変調メソッドへ入力することは可能．
