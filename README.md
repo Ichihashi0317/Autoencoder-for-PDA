@@ -50,11 +50,10 @@
 ### テスト設定
 - EsN0_test (list, ndarray) - テスト時の $E_\mathrm{s} / N_0 \ [\mathrm{dB}]$を並べた一次元配列
 - nloop_max (int, float) - $E_\mathrm{s}/N_0$毎のシミュレーション回数 <br>
-十分なエラー数が得られるまで計算をしたい場合はfloat('inf')に設定する[^NotInf]．
-後述する，シンボルエラー数がSE_maxに達するまで計算を続けたい場合はfloat('inf')に設定する[^NotInf]．
+シンボルエラー数がSE_max（後述）に達するまで計算を継続する場合はfloat('inf')に設定する[^NotInf]．
 - SE_max (int, float) - 早期終了条件 <br>
-シンボルエラー数がこの設定値に達すると，その $E_\mathrm{s} / N_0$でのシミュレーションを早期終了する．早期終了しない場合はfloat('inf')に設定する[^NotInf]．
-[^NotInf]: nloop_maxとSE_maxを両方ともfloat('inf')に設定すると計算が終わらないので，片方は有限値に設定すること．
+シンボルエラー数がこの設定値に達すると，その $E_\mathrm{s} / N_0$でのシミュレーションを打ち切る．早期終了しない場合はfloat('inf')に設定する[^NotInf]．
+[^NotInf]: nloop_maxとSE_maxの両方をfloat('inf')に設定すると計算が終了しなため，どちらか一方は有限値に設定すること．
 
 ### 並列処理設定
 - nworker (int) - 並列ワーカー数（並列処理は計算機サーバーでの実行時のみ行う）
