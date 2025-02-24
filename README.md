@@ -1,9 +1,4 @@
 # PDA-AE
-PDA
-- MIMO通信
-- 検出器にPDA
-- 変調器は従来のQAMかニューラルネットワーク (NN) で構成か選べる
-- 検出器は従来のPDAか適応スケールビリーフ (ASB) か深層展開 (DU)か選べる
 
 ![Image](https://github.com/user-attachments/assets/f3a9b51e-3ac4-4d4f-9371-2bf58fbbfd84)
 
