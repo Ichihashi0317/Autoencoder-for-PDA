@@ -2,6 +2,8 @@
 
 ![Image](https://github.com/user-attachments/assets/f3a9b51e-3ac4-4d4f-9371-2bf58fbbfd84)
 
+詳細は文献[^MyPaper]を参照．
+
 ## シミュレーションパラメータの説明
 ### 学習・テスト 共通設定
 #### モード選択
