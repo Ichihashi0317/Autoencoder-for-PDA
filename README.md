@@ -100,6 +100,5 @@ NN変調器とPDA-DU検出器は，送信機から受信機までの一連の流
 - nworker (int) - 並列ワーカー数（並列処理は計算機サーバーでの実行時のみ行う）
 
 [^MyPaper]: https://www.ieice.org/publications/ken/summary.php?contribution_id=128665&society_cd=CS&ken_id=CS&year=2024&presen_date=2024-01-18&schedule_id=8121&lang=jp&expandable=1
-
 [^TakahashiIEEE]: https://ieeexplore.ieee.org/abstract/document/8543847
 [^NotInf]: nloop_maxとSE_maxの両方をfloat('inf')に設定すると計算が終了しなため，どちらか一方は有限値に設定すること．
