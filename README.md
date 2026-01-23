@@ -14,9 +14,6 @@ End-to-end learning of a MIMO transmitter/receiver as an autoencoder — NN-base
 
 ![Image](img/AE_structure.png)
 
-[MyPaper]:<https://www.ieice.org/publications/ken/summary.php?contribution_id=128665&society_cd=CS&ken_id=CS&year=2024&presen_date=2024-01-18&schedule_id=8121&lang=jp&expandable=1>
-[TakahashiIEEE]:<https://ieeexplore.ieee.org/abstract/document/8543847>
-
 ## 特徴
 
 - レイリーフェージング MIMO 通信路を想定
@@ -33,10 +30,12 @@ End-to-end learning of a MIMO transmitter/receiver as an autoencoder — NN-base
 
 - 必須
   - Python 3.x
-  - NumPy, PyTorch
+  - NumPy
+  - PyTorch
 
 - 可視化・ノートブック実行用
-  - matplotlib, Jupyter
+  - matplotlib
+  - Jupyter
 
 ```bash
 pip install numpy torch matplotlib
@@ -56,11 +55,11 @@ pip install numpy torch matplotlib
 
 補足:
 
-- `main.ipynb` には Google Colab での実行を想定した Drive マウント処理が含まれています。Google Colab で実行する際はパスを調整してください。
+- `main.ipynb` には Google Colab を想定した Drive マウント処理が含まれています。Google Colab で実行する際はパスを調整してください。
 
 ## 設定パラメータ (`SIM`)
 
-<details><summary> 表示 </summary>
+<details><summary>表示</summary>
 
 ### 学習 / テスト 共通設定
 
@@ -77,13 +76,13 @@ pip install numpy torch matplotlib
 | `env_server` | `True`: 並列処理あり / `False`: 並列処理なし |
 | `nworker` | 並列ワーカー数 |
 
-<details><summary> `Q_ant` の詳細 </summary>
+<details><summary><code>Q_ant</code> の詳細</summary>
 
 `use_nnmod=False` の場合、 $2$ または $4^n$ ($n$ は任意の自然数) で指定可能。`True` の場合は $2$ 以上の任意の自然数で指定可能。
 
 </details>
 
-<details><summary> `num_joint_ant` の詳細 </summary>
+<details><summary><code>num_joint_ant</code> の詳細</summary>
 
 現在 `0.5`, `1` のみ指定可能
 
@@ -112,16 +111,24 @@ pip install numpy torch matplotlib
 | `nloop_max` | $E_\mathrm{s}/N_0$ 毎の最大シミュレーション回数 |
 | `SE_max` | シンボルエラー数がこの設定値に達すると、<br>その $E_\mathrm{s} / N_0$ でのシミュレーションを早期終了する |
 
-<details><summary> `nloop_max` と `SE_max` の補足 </summary>
+<details><summary><code>nloop_max</code> と <code>SE_max</code> の補足</summary>
 
 - 早期終了しない場合は `SE_max=float('inf')` に設定すること
 - シンボルエラー数が `SE_max` に達するまで計算を継続する場合は `nloop_max=float('inf')` に設定すること
-- `nloop_max` と `SE_max` の両方を `float('inf')` に設定すると計算が終了しなため、どちらか一方は有限値に設定すること
+- `nloop_max` と `SE_max` の両方を `float('inf')` に設定すると計算が終了しないため、どちらか一方は有限値に設定すること
 
 </details>
 
 </details>
+
+## 参考文献
+
+- [IEICE 技報（研究会発表）][MyPaper]
+- [ASB (Adaptively Scaled Belief) に関する先行研究][TakahashiIEEE]
 
 ## ライセンス
 
 MIT License
+
+[MyPaper]: https://www.ieice.org/publications/ken/summary.php?contribution_id=128665&society_cd=CS&ken_id=CS&year=2024&presen_date=2024-01-18&schedule_id=8121&lang=jp&expandable=1
+[TakahashiIEEE]: https://ieeexplore.ieee.org/abstract/document/8543847
