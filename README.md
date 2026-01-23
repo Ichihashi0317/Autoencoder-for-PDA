@@ -12,12 +12,10 @@ End-to-end learning of a MIMO transmitter/receiver as an autoencoder — NN-base
 を通信系全体の**自己符号化器 (autoencoder)** として end-to-end 最適化するための計算機シミュレーションコードです。
 研究詳細は修論または[技報 (IEICE)][MyPaper] をご参照ください。
 
-[MyPaper]:https://www.ieice.org/publications/ken/summary.php?contribution_id=128665&society_cd=CS&ken_id=CS&year=2024&presen_date=2024-01-18&schedule_id=8121&lang=jp&expandable=1
-[TakahashiIEEE]:https://ieeexplore.ieee.org/abstract/document/8543847
+![Image](img/AE_structure.png)
 
-![Image](https://github.com/user-attachments/assets/f3a9b51e-3ac4-4d4f-9371-2bf58fbbfd84)<!-- これはできる -->
-![Image](img/AE_structure.pdf)<!-- これはできない -->
-![Image](img/1_pilot_2x2.png)<!-- これはできる -->
+[MyPaper]:<https://www.ieice.org/publications/ken/summary.php?contribution_id=128665&society_cd=CS&ken_id=CS&year=2024&presen_date=2024-01-18&schedule_id=8121&lang=jp&expandable=1>
+[TakahashiIEEE]:<https://ieeexplore.ieee.org/abstract/document/8543847>
 
 ## 特徴
 
