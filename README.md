@@ -2,14 +2,12 @@
 
 ## 概要
 
-End-to-end learning of a MIMO transmitter/receiver as an autoencoder
-— NN-based constellation shaping + deep-unfolded PDA with trainable ASB scaling.
+End-to-end learning of a MIMO transmitter/receiver as an autoencoder — NN-based constellation shaping + deep-unfolded PDA with trainable ASB scaling.
 
 本リポジトリは、**MIMO 通信路**の繰り返し信号検出 **(PDA: Probabilistic Data Association)** を対象に、
 
 - **変調器**: **ニューラルネットワーク (NN: Neural Network)** による信号点配置のデータ駆動設計
-- **検出器**: PDA に **深層展開 (DU: Deep Unfolding)** を適用し、
-  **[ASB][TakahashiIEEE] (Adaptively Scaled Belief)** のスケーリング係数を学習
+- **検出器**: PDA に **深層展開 (DU: Deep Unfolding)** を適用し、**[ASB][TakahashiIEEE] (Adaptively Scaled Belief)** のスケーリング係数を学習
 
 を通信系全体の**自己符号化器 (autoencoder)** として end-to-end 最適化するための計算機シミュレーションコードです。
 研究詳細は[技報 (IEICE)][MyPaper] をご参照ください。
