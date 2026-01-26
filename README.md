@@ -109,7 +109,7 @@ pip install numpy torch matplotlib
 | - | - |
 | `EsN0_test` | テスト時 $E_\mathrm{s} / N_0 \ [\mathrm{dB}]$ の1次元配列 |
 | `nloop_max` | $E_\mathrm{s}/N_0$ 毎の最大シミュレーション回数 |
-| `SE_max` | シンボルエラー数がこの設定値に達すると、<br>その $E_\mathrm{s} / N_0$ でのシミュレーションを早期終了する |
+| `SE_max` | $E_\mathrm{s} / N_0$ 毎のシンボルエラー数の上限（この値に達すると早期終了） |
 
 <details><summary><code>nloop_max</code> と <code>SE_max</code> の補足</summary>
 
