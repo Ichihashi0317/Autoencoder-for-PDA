@@ -78,7 +78,7 @@ pip install numpy torch matplotlib
 
 <details><summary><code>Q_ant</code> の詳細</summary>
 
-`use_nnmod=False` の場合、 $2$ または $4^n$ ($n$ は任意の自然数) で指定可能。`True` の場合は $2$ 以上の任意の自然数で指定可能。
+`use_nnmod=False` の場合、 $2$ または $4^n$ ($n$ は任意の自然数) で指定可能。`use_nnmod=True` の場合は $2$ 以上の任意の自然数で指定可能。
 
 </details>
 
